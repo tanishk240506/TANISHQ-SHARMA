@@ -1,0 +1,1468 @@
+                                  ASSIGNMENT-1
+1. What is the fundamental difference between procedural and object-oriented programming paradigms? Provide a brief example to illustrate.
+Answer:
+Procedural programming is based on functions and procedures that operate on data, while object-oriented programming (OOP) structures the program around objects which encapsulate data and behavior.
+
+Example (Procedural):
+int speed;
+void setSpeed(int s) { speed = s; }
+int getSpeed() { return speed; }
+Example (OOP):
+cpp
+Copy
+Edit
+class Car {
+   private:
+     int speed;
+   public:
+     void setSpeed(int s) { speed = s; }
+     int getSpeed() { return speed; }
+};
+
+2. Define Object-Oriented Programming (OOP). What are its core characteristics?
+Answer:
+OOP is a programming paradigm centered around objects that represent data and the operations that can be performed on them. Core characteristics:
+
+Encapsulation
+
+Abstraction
+
+Inheritance
+
+Polymorphism
+
+3. Explain the concept of "abstraction" within the context of OOP. Why is it important?
+Answer:
+Abstraction is the process of hiding complex implementation details and showing only the essential features of an object. It's important because it reduces complexity and increases code readability and maintainability.
+
+4. What are the benefits of using OOP over procedural programming?
+Answer:
+
+Code reusability through inheritance
+
+Better data organization via encapsulation
+
+Easier maintenance and scalability
+
+Supports real-world modeling
+
+5. Give a real-world example of a problem that is well-suited to be solved using an OOP approach. Explain why.
+Answer:
+Example: Building a simulation for a zoo management system.
+Why OOP: Animals, staff, and visitors can each be modeled as classes with properties and behaviors. This makes it modular, extensible, and easier to manage.
+
+6. Define the four key principles of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction.
+Answer:
+
+Encapsulation: Wrapping data and methods into a single unit (class).
+
+Inheritance: Creating new classes from existing ones.
+
+Polymorphism: Using a single interface to represent different data types.
+
+Abstraction: Hiding internal details and showing essential features.
+
+7. Explain how encapsulation helps to protect data and create modular code. Give an example using a class and its members.
+Answer:
+Encapsulation restricts access to internal data using access specifiers, making code more secure and modular.
+
+Example:
+class BankAccount {
+   private:
+     double balance;
+   public:
+     void deposit(double amount) { balance += amount; }
+     double getBalance() { return balance; }
+};
+8. What is inheritance? How does it promote code reuse and maintainability? Provide a simple example using classes.
+Answer:
+Inheritance allows a class to inherit properties and behaviors from another class, reducing redundancy.
+Example:
+
+class Animal {
+   public:
+     void eat() { cout << "Eating..."; }
+};
+
+class Dog : public Animal {
+   public:
+     void bark() { cout << "Barking..."; }
+};
+9. Describe polymorphism. How does it contribute to flexibility and extensibility in software design? Give examples of function/operator overloading and function overriding.
+Answer:
+Polymorphism allows objects to be treated as instances of their parent class, increasing flexibility.
+
+Function Overloading:
+int add(int a, int b);
+float add(float a, float b);
+Function Overriding:
+class Base {
+   public:
+     virtual void show() { cout << "Base class"; }
+};
+
+class Derived : public Base {
+   public:
+     void show() override { cout << "Derived class"; }
+};
+10. Explain the difference between "overloading" and "overriding".
+Answer:
+
+Overloading: Same function name, different parameters (compile-time).
+
+Overriding: Redefining a base class method in a derived class (runtime).
+
+11. List at least three advantages of using OOP in software development.
+Answer:
+
+Improved code reusability
+
+Easier troubleshooting and debugging
+
+Better alignment with real-world modeling
+
+12. Give examples of application domains where OOP is commonly used (e.g., GUI development, game programming, etc.).
+Answer:
+
+GUI development
+
+Game programming
+
+Web applications
+
+Simulation systems
+
+Enterprise software (e.g., CRM, ERP)
+
+13. Discuss the impact of OOP on code maintainability and reusability.
+Answer:
+OOP promotes maintainability by organizing code into logical classes and supports reusability through inheritance and modularity, reducing redundancy.
+
+14. How does OOP contribute to the development of large and complex software systems?
+Answer:
+OOP simplifies complexity by breaking down systems into objects. This modular structure makes it easier to manage, update, and scale large applications.
+
+15. Explain the benefits of using OOP in software development.
+Answer:
+
+Encapsulation increases security
+
+Inheritance reduces code duplication
+
+Polymorphism allows flexibility
+
+Abstraction simplifies system design
+
+16. Describe the basic structure of a C++ program. What are the essential components?
+Answer:
+
+Preprocessor directives (#include)
+
+Namespace declaration
+
+main() function
+
+Classes and objects
+
+Statements and expressions
+
+Example:
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, world!";
+    return 0;
+}
+17. Explain the purpose of namespaces in C++. How do they help to avoid naming conflicts?
+Answer:
+Namespaces allow the organization of code into logical groups and prevent name collisions, especially in large projects or when using multiple libraries.
+
+Example:
+namespace Math {
+    int add(int a, int b) { return a + b; }
+}
+18. What are identifiers in C++? What rules must be followed when creating them?
+Answer:
+Identifiers are names used for variables, functions, classes, etc. Rules:
+
+Must begin with a letter or underscore
+
+Cannot use reserved keywords
+
+Case-sensitive
+
+Cannot contain spaces or special characters (except _)
+
+19. What are the differences between variables and constants in C++? How are they declared?
+Answer:
+Variables: Values can change
+cpp
+Copy
+Edit
+int age = 25;
+Constants: Values cannot change
+const int MAX_AGE = 100;
+
+20. Explain how to use control structures (e.g., if-else, for, while) to control the flow of execution in a C++ program. Provide a simple code example.
+Answer: Control structures allow conditional execution and loops.
+Example:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i;
+    for(i = 1; i <= 5; i++) {
+        if(i % 2 == 0)
+            cout << i << " is even\n";
+        else
+            cout << i << " is odd\n";
+    }
+    return 0;
+}
+                   ASSIGNMENT-2
+1. What is the purpose of the main function in a C++ program?
+The main() function is the entry point of a C++ program. When a program is executed, execution starts from the main() function.
+
+2. Explain the significance of the return type of the main function.
+The return type of main() is typically int, which indicates the program's exit status. Returning 0 usually signifies successful execution, while a non-zero value indicates an error.
+
+3. What are the two valid signatures of the main function in C++?
+Answer:
+int main();  
+int main(int argc, char* argv[]);
+
+4. What is function prototyping and why is it necessary in C++?
+Function prototyping is the declaration of a function before its actual definition. It informs the compiler about the function’s name, return type, and parameters, allowing proper type checking and preventing errors when calling functions before their definitions.
+
+5. How do you declare a function prototype for a function that returns an integer and takes two integer parameters?
+Ans. int add(int a, int b);
+
+6. What happens if a function is used before it is prototyped?
+If a function is used before being prototyped or defined, the compiler will raise an error because it does not know the function's return type and parameter types.
+
+7. What is the difference between a declaration and a definition of a function?
+Declaration (Prototype): Tells the compiler about the function's name, return type, and parameters.
+Definition: Provides the actual body and logic of the function.
+8. How do you call a simple function that takes no parameters and returns void?
+Answer: void greet() {
+    cout << "Hello!";
+}
+
+int main() {
+    greet(); // Function call
+}
+9. Explain the concept of "scope" in the context of functions.
+Scope refers to the visibility and lifetime of variables and functions. A function’s scope determines where it can be accessed or called within the program.
+
+10. What is call by reference in C++?
+Call by reference passes the address of the actual parameters to the function, allowing the function to modify the original variables.
+
+11. How does call by reference differ from call by value?
+
+Call by Value: Passes copies of variables. Changes inside the function do not affect the originals.
+
+Call by Reference: Passes references (aliases) to variables. Changes inside the function affect the originals.
+
+12. Provide an example of a function that uses call by reference to swap two integers.
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+13. What is an inline function in C++?
+An inline function is a function where the compiler attempts to insert the function’s code at the point of each call to reduce function call overhead.
+
+14. How do inline functions improve performance?
+They eliminate the overhead of a function call by expanding the function code at the call site, which can speed up execution for small, frequently called functions.
+
+15. Explain the syntax for declaring an inline function.
+inline int square(int x) {
+    return x * x;
+}
+16. What are macros in C++ and how are they different from inline functions?
+Macros are preprocessor directives (e.g., #define) that perform text substitution. Inline functions are type-checked and handled by the compiler, while macros are not.
+
+17. Explain the advantages and disadvantages of using macros over inline functions.
+
+Advantages: Simpler syntax for constants and short code blocks.
+
+Disadvantages: No type checking, potential for unexpected behavior due to lack of scope and evaluation control.
+
+18. Provide an example to illustrate the differences between macros and inline functions.
+
+#define SQUARE(x) ((x)*(x)) // Macro
+inline int square(int x) { return x * x; } // Inline function
+Calling SQUARE(a + b) can result in unexpected results due to lack of parentheses, while the inline function handles it safely.
+
+19. What is function overloading in C++?
+Function overloading allows multiple functions to have the same name but different parameter lists (type or number of parameters).
+
+20. How does the compiler differentiate between overloaded functions?
+The compiler differentiates overloaded functions based on their signature: the number and types of parameters (not the return type).
+
+21. Provide an example of overloaded functions in C++.
+
+cpp
+Copy
+Edit
+int add(int a, int b) { return a + b; }
+float add(float a, float b) { return a + b; }
+22. What are default arguments in C++?
+Default arguments are values provided in a function declaration that are used if no corresponding argument is passed during the call.
+
+23. How do you specify default arguments in a function declaration?
+int multiply(int a, int b = 2);
+24. What are the rules for using default arguments in functions?
+
+Default values must be given from right to left (i.e., trailing parameters only).
+
+Once a default value is provided, all parameters to its right must also have default values.
+
+25. Provide an example of a function with default arguments.
+ANSWER:
+int multiply(int a, int b = 2) {
+    return a * b;
+}
+
+int main() {
+    cout << multiply(5);    // Outputs 10
+    cout << multiply(5, 3); // Outputs 15
+}
+                  ASSIGMENT:3
+1. What is an object in C++?
+An object is an instance of a class. It represents a real-world entity and contains data members and member functions defined in the class.
+
+2. What is a class in C++ and how does it differ from an object?
+A class is a user-defined data type that acts as a blueprint for creating objects. While a class defines the structure and behavior, an object is an instantiation of that structure.
+
+3. Explain the concept of encapsulation with an example.
+Encapsulation is the bundling of data and functions into a single unit (class) and restricting access to some components using access specifiers.
+
+Example:
+class Employee {
+private:
+    int salary; // private data
+
+public:
+    void setSalary(int s) {
+        salary = s;
+    }
+
+    int getSalary() {
+        return salary;
+    }
+};
+4. How do you define a class in C++?
+class ClassName {
+    // members: variables and functions
+};
+5. Describe the syntax for creating an object of a class.
+ClassName objectName;
+
+6. What are private members in a class and how are they accessed?
+Private members are accessible only within the class. They cannot be accessed directly from outside.
+
+7. What are public members in a class and how are they accessed?
+Public members are accessible from anywhere where the object is visible.
+
+8. Explain the significance of access specifiers in a class.
+Access specifiers (private, public, protected) control the visibility and accessibility of class members.
+
+9. Provide an example of a class with both private and public members.
+class Person {
+private:
+    string name;
+
+public:
+    void setName(string n) {
+        name = n;
+    }
+
+    string getName() {
+        return name;
+    }
+};
+10. How does data hiding work in C++?
+Data hiding is achieved using private and protected access specifiers, which restrict direct access to class members and force controlled access via public methods.
+
+11. What is a static data member in C++?
+A static data member is shared among all instances of a class. It is declared using the static keyword.
+
+12. How do you declare and initialize a static data member?
+Declaration inside class:
+class Example {
+    static int count;
+};
+Definition outside class:
+int Example::count = 0;
+
+13. What is a static function member in C++?
+A static function member belongs to the class rather than any object and can only access static data members.
+
+14. How do static function members differ from regular function members?
+Static functions:
+Do not have access to this pointer.
+Can only access static members of the class.
+Can be called using the class name.
+
+15. Provide an example of a class with static data and function members.
+class Counter {
+private:
+    static int count;
+
+public:
+    static void increment() {
+        count++;
+    }
+
+    static int getCount() {
+        return count;
+    }
+};
+int Counter::count = 0;
+16. What is a constructor in C++ and why is it important?
+A constructor is a special member function that is automatically invoked when an object is created. It initializes the object’s data members.
+
+17. Explain the different types of constructors in C++.
+Default Constructor: No parameters.
+Parameterized Constructor: Takes parameters.
+Copy Constructor: Initializes an object using another object.
+
+18. What is a default constructor and when is it used?
+A constructor that takes no parameters. It is used when no specific initialization is required.
+class Example {
+public:
+    Example() {
+        // default constructor
+    }
+};
+19. How do parameterized constructors work?
+They initialize objects with given values.
+class Point {
+public:
+    int x, y;
+
+    Point(int a, int b) {
+        x = a;
+        y = b;
+    }
+};
+20. What is a copy constructor and what is its purpose?
+It creates a new object as a copy of an existing object.
+class Sample {
+public:
+    int val;
+
+    Sample(int v) : val(v) {}
+
+    Sample(const Sample& s) {
+        val = s.val;
+    }
+};
+21. Explain the concept of constructor overloading.
+Constructor overloading means having multiple constructors in the same class with different parameter lists. It allows creating objects in different ways
+
+class Box {
+public:
+    Box() {}                      // Default constructor
+    Box(int l) {}                 // Parameterized constructor
+    Box(int l, int b) {}          // Another parameterized constructor
+};
+22. How does a constructor initializer list work?
+A constructor initializer list initializes class members before the constructor body runs. It's especially useful for initializing const members and base classes.
+
+class Example {
+    int x;
+public:
+    Example(int val) : x(val) {}  // Initializer list
+};
+23. What is a destructor in C++ and what is its purpose?
+A destructor is a special member function called when an object goes out of scope or is deleted. It cleans up resources like memory or file handles.
+
+24. How is a destructor declared and defined?
+
+class Example {
+public:
+    ~Example() {
+        // cleanup code
+    }
+};
+25. What happens if a destructor is not explicitly defined in a class?
+If not defined, the compiler provides a default destructor. It works fine unless the class allocates resources that need explicit release (like dynamic memory).
+
+26. Explain the concept of automatic and dynamic storage duration in relation to destructors.
+Automatic storage: Local objects are destroyed automatically when they go out of scope.
+
+Dynamic storage: Objects created with new must be explicitly deleted with delete, which invokes the destructor.
+
+27. How do destructors differ from constructors?
+Constructors initialize objects; destructors clean up.
+
+Constructors can be overloaded; destructors cannot.
+
+Only one destructor is allowed per class, with no parameters.
+
+28. What is operator overloading in C++ and why is it useful?
+Operator overloading lets you redefine how operators work with user-defined types, improving code readability and allowing natural syntax.
+
+29. Describe the syntax for overloading an operator.
+As a member function:
+
+ReturnType operatorOp(const Type& obj);
+As a friend function:
+friend ReturnType operatorOp(const Type& lhs, const Type& rhs);
+
+30. Which operators can and cannot be overloaded in C++?
+Can be overloaded:
++ - * / % == != < > <= >= [] () -> ++ -- << >> =
+
+Cannot be overloaded:
+. (dot), .* (pointer-to-member), :: (scope resolution), sizeof, typeid, alignof, static_cast, dynamic_cast, reinterpret_cast, const_cast, new, delete (can be overloaded as functions, not operators).
+
+31. Provide an example of overloading the "+" operator for a custom class.
+cpp
+Copy
+Edit
+class Point {
+    int x, y;
+public:
+    Point(int a = 0, int b = 0) : x(a), y(b) {}
+
+    Point operator+(const Point& p) {
+        return Point(x + p.x, y + p.y);
+    }
+
+    void display() {
+        cout << "(" << x << ", " << y << ")" << endl;
+    }
+};
+32. Explain the concept of friend functions in the context of operator overloading.
+Friend functions can access private and protected members of a class. In operator overloading, they're useful when the left operand isn't an object of the class.
+
+33. What is a friend function in C++ and how is it declared?
+A friend function is declared with the friend keyword inside the class but defined outside. It’s not a member of the class but can access its private data.
+
+class MyClass {
+    int a;
+    friend void show(MyClass obj);
+};
+34. How do friend functions differ from member functions?
+Friend functions are not part of the class scope.
+They do not use the this pointer.
+They must be granted access explicitly using the friend keyword.
+
+35. Explain the benefits and potential drawbacks of using friend functions.
+Benefits:
+
+Allow external functions to access private members for tight integration.
+
+Useful in operator overloading for symmetrical binary operators.
+
+Drawbacks:
+
+Break encapsulation.
+
+Make maintenance harder if overused.
+Tight coupling between classes/functions.
+
+36. What is inheritance in C++ and why is it important?
+Inheritance allows a class (derived class) to inherit properties and behaviors (data and functions) from another class (base class). It promotes code reuse, extensibility, and helps in implementing polymorphism.
+
+37. Explain the different types of inheritance in C++.
+Single Inheritance – One derived class inherits from one base class.
+
+Multiple Inheritance – One derived class inherits from more than one base class.
+
+Multilevel Inheritance – A derived class is base for another class.
+
+Hierarchical Inheritance – Multiple derived classes inherit from one base class.
+
+Hybrid Inheritance – A combination of more than one type of inheritance.
+
+38. How do you implement single inheritance in C++?
+class Base {
+public:
+    void show() {
+        cout << "Base class" << endl;
+    }
+};
+
+class Derived : public Base {
+    // Inherits show()
+};
+39. What is multiple inheritance and how does it differ from single inheritance?
+In multiple inheritance, a class inherits from more than one base class. Unlike single inheritance, there can be ambiguity due to overlapping members.
+
+class A { };
+class B { };
+class C : public A, public B { }; // C inherits from both A and B
+40. Describe hierarchical inheritance with an example.
+One base class with multiple derived classes.
+
+class Animal {
+public:
+    void eat() { cout << "Eating\n"; }
+};
+
+class Dog : public Animal { };
+class Cat : public Animal { };
+41. What is multilevel inheritance and how is it implemented in C++?
+A class is derived from a derived class.
+class A { };
+class B : public A { };
+class C : public B { }; // C inherits from B, which inherits from A
+42. Explain the concept of hybrid inheritance.
+Hybrid inheritance is a combination of multiple and multilevel or other inheritance types. It may lead to the diamond problem, resolved using virtual inheritance.
+
+43. What are access modifiers in C++ and what are the different types?
+Access modifiers control the access level of class members:
+
+public: Accessible from anywhere.
+
+private: Accessible only within the class.
+
+protected: Accessible within the class and derived classes.
+
+44. How do public, private, and protected access modifiers affect inheritance?
+Inheritance Type	Public in Base	Protected in Base	Private in Base
+Public	Public	Protected	Not inherited
+Protected	Protected	Protected	Not inherited
+Private	Private	Private	Not inherited
+
+45. Explain how access modifiers control member accessibility in derived classes.
+public members remain accessible.
+
+protected members are accessible to derived classes.
+
+private members are not accessible directly; can be accessed via public or protected methods.
+
+46. What is function overriding in the context of inheritance?
+Function overriding occurs when a derived class defines a function with the same signature as in its base class. It replaces the base version during runtime (if virtual).
+
+47. How do you override a base class function in a derived class?
+class Base {
+public:
+    virtual void show() {
+        cout << "Base show" << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override { // Overrides Base::show
+        cout << "Derived show" << endl;
+    }
+};
+48. Explain the use of the "virtual" keyword in function overriding.
+The virtual keyword enables runtime polymorphism, allowing derived class functions to be called via base class pointers/references.
+
+49. What is the significance of the "override" specified in C++11 and later?
+override ensures that the function overrides a base class virtual function. If there's a mismatch in signature, the compiler shows an error.
+
+50. What is a virtual base class in C++ and why is it used?
+A virtual base class is used to prevent multiple "instances" of a base class in an inheritance hierarchy involving multiple inheritance.
+
+51. How do you declare and implement a virtual base class?
+class A {
+public:
+    int x;
+};
+
+class B : virtual public A { };
+class C : virtual public A { };
+class D : public B, public C { };
+52. Explain the role of virtual base classes in resolving ambiguity in multiple inheritance.
+Without virtual inheritance, the derived class (like D) would get two copies of class A. Using virtual, only one shared instance is inherited, resolving ambiguity.
+
+53. Provide an example of using a virtual base class to avoid the diamond problem in inheritance.
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    void show() { cout << "A's show()" << endl; }
+};
+
+class B : virtual public A { };
+class C : virtual public A { };
+
+class D : public B, public C { };
+
+int main() {
+    D obj;
+    obj.show(); // No ambiguity, only one A
+    return 0;
+}
+                    ASSIGNMENT-4
+1. What is polymorphism in C++ and why is it important?
+Polymorphism allows one interface to be used for different data types. It enables objects of different classes to be treated as objects of a common base class, promoting flexibility and code reuse.
+
+2. Explain the concept of compile-time (static) polymorphism with examples.
+Static polymorphism occurs when the function to be invoked is resolved at compile time, mainly using function overloading and operator overloading.
+
+Example:
+class Print {
+public:
+    void show(int i) { cout << "Integer: " << i << endl; }
+    void show(double d) { cout << "Double: " << d << endl; }
+};
+3. Describe the concept of runtime (dynamic) polymorphism with examples.
+Dynamic polymorphism uses virtual functions and resolves calls at runtime, allowing derived class methods to override base class methods.
+
+Example:
+class Base {
+public:
+    virtual void speak() { cout << "Base speaking" << endl; }
+};
+
+class Derived : public Base {
+public:
+    void speak() override { cout << "Derived speaking" << endl; }
+};
+
+Base* b = new Derived();
+b->speak(); // Output: Derived speaking
+4. What is the difference between static and dynamic polymorphism?
+Feature	Static Polymorphism	Dynamic Polymorphism
+Binding Time	Compile time	Runtime
+Implementation	Function/operator overloading	Virtual functions
+Flexibility	Less flexible	More flexible
+Overhead	No runtime overhead	Has runtime overhead
+
+5. How is polymorphism implemented in C++?
+Polymorphism is implemented using:
+
+Function overloading and operator overloading (static)
+
+Virtual functions, base class pointers, and vtable (dynamic)
+
+6. What are pointers in C++ and how do they work?
+A pointer stores the memory address of another variable. They enable indirect access and are used for dynamic memory, arrays, functions, and object manipulation.
+
+7. Explain the syntax for declaring and initializing pointers.
+
+int x = 10;
+int* ptr = &x; // ptr holds the address of x
+8. How do you access the value pointed to by a pointer?
+Use the dereference operator *:
+cout << *ptr; // Outputs the value of x
+
+9. Describe the concept of pointer arithmetic.
+Pointer arithmetic allows navigating through arrays or memory:
+
+ptr + 1 moves the pointer to the next element (based on type size)
+
+Valid only within allocated ranges
+
+10. What are the common pitfalls when using pointers?
+Dangling pointers (using deleted memory)
+
+Memory leaks (not deleting dynamically allocated memory)
+
+Null pointer dereferencing
+
+Pointer arithmetic errors
+
+11. How are pointers used with objects in C++?
+Pointers can point to objects to access members dynamically or pass large objects efficiently.
+
+class MyClass {
+public:
+    void display() { cout << "Hello"; }
+};
+
+MyClass* obj = new MyClass();
+obj->display(); // Access via pointer
+12. Explain the process of dynamically allocating objects using pointers.
+Use the new keyword to allocate memory:
+MyClass* obj = new MyClass(); // Allocates memory dynamically
+
+13. Provide an example of accessing object members using pointers.
+
+class Car {
+public:
+    void start() { cout << "Car started\n"; }
+};
+
+Car* c = new Car();
+c->start(); // Use arrow operator
+14. What is the difference between a pointer to an object and a reference to an object?
+Feature	Pointer	Reference
+Syntax	* and -> required	Access like normal variable
+Nullability	Can be null	Cannot be null
+Reassignment	Can change target	Cannot change reference
+
+15. How do you release dynamically allocated objects in C++?
+Use the delete keyword:
+delete obj;
+obj = nullptr; // Optional safety
+
+16. What is the this pointer in C++ and what is its significance?
+this is an implicit pointer available in all non-static member functions. It points to the current instance of the class.
+
+17. How is the this pointer used in member functions?
+To refer to members of the current object explicitly or when parameters shadow member names.
+class Sample {
+    int x;
+public:
+    void setX(int x) {
+        this->x = x; // disambiguates the parameter from the member
+    }
+};
+18. Explain how the this pointer can be used to return the current object.
+Useful for method chaining.
+class Sample {
+    int x;
+public:
+    Sample& setX(int val) {
+        x = val;
+        return *this; // return current object
+    }
+};
+19. What is a virtual function in C++ and why is it used?
+A virtual function allows runtime polymorphism, enabling derived class methods to override base class methods even when accessed via base class pointers.
+
+20. Describe the syntax for declaring a virtual function.
+class Base {
+public:
+    virtual void show(); // virtual function
+};
+21. Explain the concept of a vtable (virtual table) and its role in virtual functions.
+A vtable is a table maintained by the compiler that stores function pointers to virtual functions of a class. When a virtual function is called via a base class pointer, the vtable ensures the correct function (from the derived class) is called, enabling runtime polymorphism.
+
+22. What is a pure virtual function and how is it declared?
+A pure virtual function has no implementation in the base class and is declared with = 0.
+class Shape {
+public:
+    virtual void draw() = 0; // Pure virtual
+};
+23. Provide an example of a class with pure virtual functions.
+class Shape {
+public:
+    virtual void draw() = 0;
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Circle" << endl;
+    }
+};
+24. What are the implications of having pure virtual functions in a class?
+The class becomes abstract.
+
+Cannot create objects of that class.
+
+Derived classes must override all pure virtual functions to be instantiated.
+
+25. How is polymorphism implemented using inheritance and virtual functions?
+By using a base class pointer to refer to a derived class object and marking functions in the base class as virtual.
+class Animal {
+public:
+    virtual void sound() { cout << "Animal sound\n"; }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override { cout << "Dog barks\n"; }
+};
+
+Animal* a = new Dog();
+a->sound(); // Calls Dog's sound()
+26. Provide an example of implementing polymorphism with base and derived classes.
+class Shape {
+public:
+    virtual void draw() { cout << "Drawing shape\n"; }
+};
+
+class Rectangle : public Shape {
+public:
+    void draw() override { cout << "Drawing rectangle\n"; }
+};
+
+void display(Shape* s) {
+    s->draw(); // Polymorphic call
+}
+27. Explain the concept of late binding in the context of polymorphism.
+Late binding (runtime binding) means that the function call is resolved at runtime, not compile time. It's enabled using virtual functions.
+
+28. How does the compiler manage polymorphism in C++?
+The compiler:
+
+Creates a vtable for each class with virtual functions.
+
+Stores a vptr (pointer to vtable) in each object.
+
+At runtime, uses the vtable to resolve virtual function calls.
+
+29. What is an abstract class in C++?
+A class containing at least one pure virtual function is an abstract class. It cannot be instantiated directly.
+
+30. How do abstract classes differ from regular classes?
+Feature	Abstract Class	Regular Class
+Instantiation	Cannot be instantiated	Can be instantiated
+Contains	Pure virtual functions	May or may not
+Purpose	For interface/inheritance	For complete objects
+
+31. Explain the role of abstract methods in abstract classes.
+Abstract methods (pure virtual functions) define an interface without implementation, ensuring that derived classes must provide their own implementation.
+
+32. Provide an example of defining and using an abstract class.
+class Vehicle {
+public:
+    virtual void start() = 0; // Pure virtual
+};
+
+class Car : public Vehicle {
+public:
+    void start() override { cout << "Car started" << endl; }
+};
+33. What are the benefits of using abstract classes in C++?
+Define interfaces clearly.
+
+Enable runtime polymorphism.
+
+Promote code consistency across derived classes.
+
+Enforce derived class responsibilities.
+
+34. What is exception handling in C++ and why is it important?
+Exception handling manages runtime errors gracefully using structured control. It prevents crashes and allows fallback or recovery logic.
+
+35. Describe the syntax for throwing and catching exceptions in C++.
+try {
+    throw "Error occurred";
+} catch (const char* e) {
+    cout << e << endl;
+}
+36. Explain the concept of try, catch, and throw blocks.
+try: Wraps code that might cause an exception.
+
+throw: Raises an exception.
+
+catch: Handles the thrown exception.
+
+37. What is the role of the catch block in exception handling?
+The catch block handles specific exceptions and prevents program termination by providing a way to recover or display error messages.
+
+38. Provide an example of handling multiple exceptions in C++.
+try {
+    int x = 0;
+    if (x == 0) throw "Division by zero!";
+} catch (const char* e) {
+    cout << e << endl;
+} catch (...) {
+    cout << "Some exception occurred." << endl;
+}
+39. How does the throw keyword work in exception handling?
+The throw keyword raises an exception object, which is then caught by a corresponding catch block based on the exception type.
+
+40. What is the purpose of the finally block in exception handling?
+C++ does not have a finally block like Java or C#. Instead, RAII (Resource Acquisition Is Initialization) and destructors are used for cleanup.
+41. How do you create custom exception classes in C++?
+You can create a custom exception by defining a class (usually inheriting from std::exception) and overriding the what() function.
+Example:
+#include <iostream>
+#include <exception>
+using namespace std;
+
+class MyException : public exception {
+public:
+    const char* what() const noexcept override {
+        return "Custom exception occurred!";
+    }
+};
+
+int main() {
+    try {
+        throw MyException();
+    } catch (const exception& e) {
+        cout << e.what() << endl;
+    }
+}
+42. What are templates in C++ and why are they useful?
+Templates allow writing generic code that works with any data type. They promote code reuse and type safety, especially for data structures and algorithms.
+
+43. Describe the syntax for defining a function template.
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+44. Provide an example of a function template that performs a generic operation.
+#include <iostream>
+using namespace std;
+
+template <typename T>
+T multiply(T a, T b) {
+    return a * b;
+}
+
+int main() {
+    cout << multiply(2, 3) << endl;       // Outputs 6 (int)
+    cout << multiply(2.5, 4.0) << endl;   // Outputs 10.0 (double)
+}
+45. What is a class template and how is it different from a function template?
+A class template defines a blueprint for creating classes that work with any data type.
+
+A function template defines a single function that works with any data type.
+Class templates are more complex and often used in STL (e.g., vector, stack).
+
+46. Explain the syntax for defining a class template.
+template <typename T>
+class Box {
+private:
+    T value;
+public:
+    void set(T val) { value = val; }
+    T get() { return value; }
+};
+47. Provide an example of a class template that implements a generic data structure.
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class Stack {
+private:
+    T arr[100];
+    int top = -1;
+public:
+    void push(T val) { arr[++top] = val; }
+    T pop() { return arr[top--]; }
+};
+
+int main() {
+    Stack<int> s;
+    s.push(10);
+    s.push(20);
+    cout << s.pop() << endl; // 20
+}
+48. How do you instantiate a template class in C++?
+You specify the data type in angle brackets:
+Box<int> intBox;
+Box<string> strBox;
+
+49. What are the advantages of using templates over traditional class inheritance?
+Templates	Inheritance
+Compile-time polymorphism	Runtime polymorphism
+No virtual function overhead	Overhead due to vtable
+Type-safe and generic	More specific to object hierarchies
+Faster execution	May be slower due to dynamic binding
+
+50. How do templates promote code reusability in C++?
+Templates allow you to write a single version of a class or function that works with multiple data types, avoiding code duplication and improving maintainability.
+
+                  ASSIGNMENT-5
+1. What are streams in C++ and why are they important?
+Streams in C++ are objects that represent input and output channels. They allow the reading and writing of data in a sequential flow, making it easy to handle I/O operations for consoles, files, and strings.
+
+2. Explain the different types of streams in C++.
+Input Stream (istream) – For reading data (e.g., cin, ifstream)
+
+Output Stream (ostream) – For writing data (e.g., cout, ofstream)
+
+File Stream (fstream) – For file I/O (ifstream, ofstream, fstream)
+
+String Stream (stringstream) – For manipulating strings as streams
+
+3. How do input and output streams differ in C++?
+Input streams read data into the program (e.g., cin).
+
+Output streams write data out from the program (e.g., cout).
+
+4. Describe the role of the iostream library in C++.
+<iostream> provides the basic classes (istream, ostream, etc.) and objects (cin, cout, cerr, clog) needed for standard input/output.
+
+5. What is the difference between a stream and a file stream?
+Stream: Used for general input/output (e.g., keyboard, console).
+
+File stream: Specifically used for reading from or writing to files.
+
+6. What is the purpose of the cin object in C++?
+cin is an object of class istream and is used to take input from the standard input device (usually the keyboard).
+
+7. How does the cin object handle input operations?
+It uses the extraction operator (>>) to read input and stores it in a variable.
+int x;
+cin >> x;
+8. What is the purpose of the cout object in C++?
+cout is an object of class ostream used to display output on the console.
+
+9. How does the cout object handle output operations?
+It uses the insertion operator (<<) to send output to the console.
+cout << "Hello, world!";
+
+10. Explain the use of the insertion (<<) and extraction (>>) operators in conjunction with cin and cout.
+>>: Extracts input from cin and stores it in variables.
+
+<<: Inserts output into cout for displaying on screen.
+
+11. What are the main C++ stream classes and their purposes?
+istream: Input operations
+
+ostream: Output operations
+
+ifstream: Input from files
+
+ofstream: Output to files
+
+fstream: Both input/output for files
+
+stringstream: Input/output from/to strings
+
+12. Explain the hierarchy of C++ stream classes.
+plaintext
+        ios
+         |
+    -------------
+    |           |
+istream       ostream
+    |           |
+  ifstream    ofstream
+        \     /
+         fstream
+All stream classes are derived from the base class ios.
+
+13. What is the role of the istream and ostream classes?
+istream: Provides methods for input operations (e.g., cin, get(), getline()).
+
+ostream: Provides methods for output operations (e.g., cout, put(), write()).
+
+14. Describe the functionality of the ifstream and ofstream classes.
+ifstream: Reads data from files (input file stream).
+
+ofstream: Writes data to files (output file stream).
+
+15. How do the fstream and stringstream classes differ from other stream classes?
+fstream: Used for file input and output.
+
+stringstream: Used for treating strings as streams, allowing input/output operations on strings.
+
+16. What is unformatted I/O in C++?
+Unformatted I/O refers to basic input/output functions that do not format the data, such as get(), put(), read(), and write().
+
+17. Provide examples of unformatted I/O functions.
+char ch;
+cin.get(ch);       // Read a single character
+cout.put(ch);      // Output a single character
+
+char buffer[10];
+cin.read(buffer, 10);  // Read 10 bytes
+18. What is formatted I/O in C++?
+Formatted I/O involves input/output that uses formatting rules, such as field width, precision, and alignment.
+
+19. How do you use manipulators to perform formatted I/O in C++?
+Manipulators like setw, setprecision, fixed, etc., are used to control output formatting.
+#include <iomanip>
+cout << setw(10) << 123 << endl;
+
+20. Explain the difference between unformatted and formatted I/O operations.
+Feature	Formatted I/O	Unformatted I/O
+Data Control	Precise formatting	Raw byte/character input
+Flexibility	More flexible and readable	Faster, but less readable
+Functions	<<, >>, manipulators	get(), put(), read()
+
+21. What are manipulators in C++?
+Manipulators are functions used with streams to control formatting of data, such as alignment, precision, and width.
+
+22. How do manipulators modify the behavior of I/O operations?
+They change stream settings temporarily (or persistently) to alter how data is input/output, such as padding numbers or aligning text.
+
+23. Provide examples of commonly used manipulators in C++.
+setw(n)       // Sets field width
+setprecision(n) // Sets decimal precision
+fixed         // Use fixed-point notation
+showpoint     // Show decimal point
+left/right    // Align output
+
+24. Explain the use of the setw, setprecision, and fixed manipulators.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double pi = 3.14159;
+cout << setw(10) << pi << endl;           // Sets field width
+cout << setprecision(3) << pi << endl;    // Sets precision
+cout << fixed << setprecision(2) << pi;   // Fixed-point notation
+
+25. How do you create custom manipulators in C++?
+You define a function that returns ostream& and takes ostream& as an argument.
+ostream& customManipulator(ostream& os) {
+    os << "[CUSTOM]";
+    return os;
+}
+// Usage:
+cout << customManipulator << " Hello!";
+21. What are manipulators in C++?
+Manipulators are functions used with stream objects (cin, cout, etc.) to control the formatting of input/output operations.
+
+22. How do manipulators modify the behavior of I/O operations?
+They change how data is displayed or read—for example, setting field width, decimal precision, alignment, and number formats—without altering the actual data.
+
+23. Provide examples of commonly used manipulators in C++.
+setw(n): Sets field width
+
+setprecision(n): Sets number of significant digits
+
+fixed: Displays floating-point numbers in fixed-point notation
+
+showpoint: Always displays decimal point
+
+left / right: Left or right alignment
+
+hex, dec, oct: Change base of integer output
+24. Explain the use of the setw, setprecision, and fixed manipulators.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double pi = 3.1415926;
+
+    cout << setw(10) << pi << endl;                   // Sets field width to 10
+    cout << setprecision(3) << pi << endl;            // Prints with 3 significant digits
+    cout << fixed << setprecision(2) << pi << endl;   // Prints with 2 decimal places
+}
+25. How do you create custom manipulators in C++?
+You define a function that takes and returns an ostream&.
+#include <iostream>
+using namespace std;
+
+ostream& customTag(ostream& os) {
+    os << "[LOG] ";
+    return os;
+}
+
+int main() {
+    cout << customTag << "This is a message." << endl;
+}
+26. What is a file stream in C++ and how is it used?
+A file stream is used for reading from or writing to files. C++ provides ifstream, ofstream, and fstream to handle file operations.
+
+27. Explain the process of opening and closing files using file streams.
+#include <fstream>
+using namespace std;
+
+ifstream inFile("input.txt");
+ofstream outFile("output.txt");
+
+if (inFile.is_open()) {
+    // Read from file
+}
+inFile.close(); // Always close after use
+28. Describe the different modes in which a file can be opened.
+ios::in: Read from file
+
+ios::out: Write to file
+
+ios::app: Append to file
+
+ios::binary: Open file in binary mode
+
+ios::trunc: Truncate file if it exists
+
+ios::ate: Start at the end of the file
+
+29. How do you read from and write to files using file streams?
+#include <fstream>
+using namespace std;
+
+int main() {
+    // Write to file
+    ofstream outFile("test.txt");
+    outFile << "Hello, file!";
+    outFile.close();
+
+    // Read from file
+    ifstream inFile("test.txt");
+    string text;
+    inFile >> text;
+    cout << text;
+    inFile.close();
+}
+30. Provide an example of using file streams to copy the contents of one file to another.
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream inFile("source.txt");
+    ofstream outFile("dest.txt");
+
+    char ch;
+    while (inFile.get(ch)) {
+        outFile.put(ch);
+    }
+
+    inFile.close();
+    outFile.close();
+}
+31. What are the main C++ file stream classes and their purposes?
+ifstream: Input from files
+
+ofstream: Output to files
+
+fstream: Input and output from/to files
+
+32. Explain the role of the ifstream, ofstream, and fstream classes.
+ifstream: Used for reading files (input file stream)
+
+ofstream: Used for writing to files (output file stream)
+
+fstream: Can read and write to the same file (file stream)
+
+33. How do you use the ifstream class to read data from a file?
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    ifstream file("data.txt");
+    string line;
+    while (getline(file, line)) {
+        cout << line << endl;
+    }
+    file.close();
+}
+34. How do you use the ofstream class to write data to a file?
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream file("output.txt");
+    file << "Writing to a file." << endl;
+    file.close();
+}
+35. Describe the functionality of the fstream class for both input and output operations.
+fstream can handle both reading and writing:
+#include <fstream>
+using namespace std;
+
+int main() {
+    fstream file("data.txt", ios::in | ios::out);
+    string text;
+    file << "New line\n";
+    file.seekg(0);  // Move read pointer to beginning
+    while (getline(file, text)) {
+        cout << text << endl;
+    }
+    file.close();
+}
+36. What are file management functions in C++?
+File management functions help manipulate files—such as removing, renaming, moving the file pointer, and checking file status—programmatically.
+
+37. How do you use the remove and rename functions to manage files?
+remove("filename.txt"); — Deletes a file
+
+rename("oldname.txt", "newname.txt"); — Renames a file
+#include <cstdio>
+int main() {
+    remove("oldfile.txt");
+    rename("data.txt", "renamed.txt");
+}
+38. Explain the purpose of the seekg and seekp functions in file management.
+seekg (get): Moves the read pointer.
+
+seekp (put): Moves the write pointer.
+Used for random access and positioning within a file.
+
+39. Provide examples of using file management functions to manipulate file pointers.
+#include <fstream>
+using namespace std;
+
+int main() {
+    fstream file("example.txt", ios::in | ios::out);
+    file.seekp(5);           // Move write pointer
+    file << "Hello";         // Overwrite from 6th character
+    file.seekg(0);           // Move read pointer to start
+    string text;
+    getline(file, text);
+    cout << text;
+    file.close();
+}
+40. What are file modes in C++?
+File modes define how a file is opened (e.g., read-only, write-only, append, binary, etc.).
+
+41. Describe the different file modes available in C++.
+ios::in – Read
+
+ios::out – Write
+
+ios::app – Append
+
+ios::ate – Go to end after opening
+
+ios::trunc – Delete existing contents
+
+ios::binary – Binary mode
+
+42. How do you specify a file mode when opening a file?
+fstream file("data.bin", ios::in | ios::out | ios::binary);
+
+43. Explain the difference between binary and text file modes.
+Text mode: Interprets data as characters (e.g., newline conversions).
+
+Binary mode: Reads/writes raw bytes exactly as stored in memory.
+
+44. Provide examples of opening files in different modes using file streams.
+ofstream outFile("output.txt", ios::app);        // Append mode
+ifstream inFile("input.txt", ios::in);           // Read mode
+fstream file("data.bin", ios::in | ios::out | ios::binary); // Binary mode
+
+45. What are binary files in C++ and how do they differ from text files?
+Binary files: Store data in raw byte format (e.g., structs, images).
+Text files: Store readable characters (e.g., .txt, .csv).
+
+46. Explain the process of reading from and writing to binary files.
+Use write() and read() with ofstream and ifstream in binary mode:
+
+#include <fstream>
+using namespace std;
+
+struct Person {
+    char name[20];
+    int age;
+};
+
+int main() {
+    Person p = {"Alice", 30};
+
+    ofstream out("person.dat", ios::binary);
+    out.write((char*)&p, sizeof(p));
+    out.close();
+
+    Person q;
+    ifstream in("person.dat", ios::binary);
+    in.read((char*)&q, sizeof(q));
+    in.close();
+
+    cout << q.name << " is " << q.age;
+}
+47. What are random access files in C++?
+Files that allow direct access to any location using file pointers (seekg, seekp, tellg, tellp) instead of sequential access.
+
+48. How do you perform random access operations on files?
+Use seekg(position) to move to any byte location in the file and read() or write() data.
+
+49. Provide examples of using file streams to implement random access in binary files.
+#include <fstream>
+using namespace std;
+
+struct Student {
+    char name[20];
+    int roll;
+};
+
+int main() {
+    fstream file("students.dat", ios::in | ios::out | ios::binary);
+
+    Student s = {"Bob", 2};
+    file.seekp(1 * sizeof(Student)); // Write to second record
+    file.write((char*)&s, sizeof(s));
+
+    Student readS;
+    file.seekg(1 * sizeof(Student)); // Read from second record
+    file.read((char*)&readS, sizeof(readS));
+
+    cout << readS.name << " - " << readS.roll;
+    file.close();
+}
