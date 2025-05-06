@@ -1,0 +1,795 @@
+1. Write a program to perform basic input and output using streams (cin and cout).
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "You entered: " << num << endl;
+    return 0;
+}
+2. Create a program that reads and displays multiple lines of text using cin and cout.
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string line;
+    cout << "Enter multiple lines of text (Ctrl+D to end input):" << endl;
+    while (getline(cin, line)) {
+        cout << line << endl;
+    }
+    return 0;
+}
+3. Implement a program that uses streams to read integers from the user and display their sum.
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2;
+    cout << "Enter two integers: ";
+    cin >> num1 >> num2;
+    cout << "Sum: " << num1 + num2 << endl;
+    return 0;
+}
+4. Write a program to input and output various data types using cin and cout.
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i;
+    float f;
+    double d;
+    char c;
+
+    cout << "Enter an integer, float, double, and character: ";
+    cin >> i >> f >> d >> c;
+
+    cout << "You entered: " << i << " " << f << " " << d << " " << c << endl;
+    return 0;
+}
+5. Create a program that formats output using manipulators such as setw, setprecision, and fixed.
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double num = 123.456789;
+    cout << "Default: " << num << endl;
+    cout << "Fixed: " << fixed << setprecision(2) << num << endl;
+    cout << "Width 10: " << setw(10) << num << endl;
+    return 0;
+}
+6. Implement a program that reads user input for name, age, and salary, and then displays the information using formatted output.
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    string name;
+    int age;
+    double salary;
+
+    cout << "Enter your name, age, and salary: ";
+    cin >> name >> age >> salary;
+
+    cout << "Name: " << name << ", Age: " << age << ", Salary: $" << fixed << setprecision(2) << salary << endl;
+    return 0;
+}
+7. Write a program to demonstrate the use of ifstream and ofstream for file input and output.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("output.txt");
+    outFile << "Hello, file!" << endl;
+    outFile.close();
+
+    ifstream inFile("output.txt");
+    string line;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+    return 0;
+}
+8. Implement a program that reads a list of integers from a file and displays them on the console.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream inFile("numbers.txt");
+    int num;
+    while (inFile >> num) {
+        cout << num << endl;
+    }
+    inFile.close();
+    return 0;
+}
+9. Create a program that writes a list of strings to a file.
+
+
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+int main() {
+    ofstream outFile("strings.txt");
+    vector<string> strings = {"Hello", "World", "C++"};
+    
+    for (const auto& str : strings) {
+        outFile << str << endl;
+    }
+    outFile.close();
+    return 0;
+}
+10. Write a program to demonstrate unformatted input and output using get and put functions.
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch;
+    cout << "Enter a character: ";
+    ch = cin.get();
+    cout.put(ch);
+    return 0;
+}
+11. Implement a program that reads and writes characters using get and put.
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch;
+    cout << "Enter a character: ";
+    ch = cin.get();
+    cout << "You entered: ";
+    cout.put(ch) << endl;
+    return 0;
+}
+12. Create a program that uses formatted input and output to display a table of data.
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    cout << left << setw(15) << "Name" << setw(10) << "Age" << setw(10) << "Salary" << endl;
+    cout << setw(15) << "John" << setw(10) << 28 << setw(10) << "$5000" << endl;
+    cout << setw(15) << "Alice" << setw(10) << 24 << setw(10) << "$4000" << endl;
+    return 0;
+}
+13. Write a program that uses getline to read a full line of text and display it.
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string line;
+    cout << "Enter a full line of text: ";
+    getline(cin, line);
+    cout << "You entered: " << line << endl;
+    return 0;
+}
+14. Write a program that uses manipulators to format floating-point numbers with different precisions.
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double num = 3.14159;
+    cout << fixed << setprecision(2) << "Rounded: " << num << endl;
+    cout << fixed << setprecision(4) << "More precision: " << num << endl;
+    return 0;
+}
+15. Implement a program that uses setw to align text output in columns.
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    cout << setw(10) << "Name" << setw(5) << "Age" << setw(10) << "Salary" << endl;
+    cout << setw(10) << "Alice" << setw(5) << 25 << setw(10) << "$4000" << endl;
+    cout << setw(10) << "Bob" << setw(5) << 30 << setw(10) << "$5000" << endl;
+    return 0;
+}
+16. Create a program that uses manipulators to format currency and percentage values.
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double salary = 5000.75;
+    double discount = 0.10;
+
+    cout << fixed << setprecision(2) << "Salary: $" << salary << endl;
+    cout << "Discount: " << discount * 100 << "%" << endl;
+    return 0;
+}
+17. Write a program to read data from a text file and display it on the console.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream inFile("data.txt");
+    string line;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+    return 0;
+}
+18. Implement a program to write user input to a text file.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("user_input.txt");
+    string input;
+    cout << "Enter text to write to file: ";
+    getline(cin, input);
+    outFile << input << endl;
+    outFile.close();
+    return 0;
+}
+19. Create a program that copies the contents of one file to another using file streams.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream inFile("source.txt");
+    ofstream outFile("destination.txt");
+
+    string line;
+    while (getline(inFile, line)) {
+        outFile << line << endl;
+    }
+
+    inFile.close();
+    outFile.close();
+    return 0;
+}
+20. Write a program that appends new data to an existing file.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("data.txt", ios::app);
+    outFile << "New data added!" << endl;
+    outFile.close();
+    return 0;
+}
+21. Write a program to read binary data from a file using ifstream.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream inFile("data.bin", ios::binary);
+    char ch;
+    while (inFile.get(ch)) {
+        cout.put(ch);
+    }
+    inFile.close();
+    return 0;
+}
+22. Implement a program to write binary data to a file using ofstream.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("data.bin", ios::binary);
+    char ch = 'A';
+    outFile.put(ch);
+    outFile.close();
+    return 0;
+}
+23. Create a program that demonstrates the use of fstream for both input and output operations.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    fstream file("file.txt", ios::in | ios::out);
+    if (!file) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+    file << "Writing to file." << endl;
+    file.seekg(0);
+    string line;
+    while (getline(file, line)) {
+        cout << line << endl;
+    }
+    file.close();
+    return 0;
+}
+24. Write a program to read and write complex data structures to a file using binary file streams.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    Person p = {"John Doe", 30};
+
+    ofstream outFile("person.dat", ios::binary);
+    outFile.write(reinterpret_cast<char*>(&p), sizeof(p));
+    outFile.close();
+
+    Person pRead;
+    ifstream inFile("person.dat", ios::binary);
+    inFile.read(reinterpret_cast<char*>(&pRead), sizeof(pRead));
+    inFile.close();
+
+    cout << "Name: " << pRead.name << ", Age: " << pRead.age << endl;
+    return 0;
+}
+25. Write a program to rename and delete files using the rename and remove functions.
+
+
+
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    if (rename("old_file.txt", "new_file.txt") != 0) {
+        cout << "Error renaming file." << endl;
+    } else {
+        cout << "File renamed successfully." << endl;
+    }
+
+    if (remove("new_file.txt") != 0) {
+        cout << "Error deleting file." << endl;
+    } else {
+        cout << "File deleted successfully." << endl;
+    }
+    return 0;
+}
+26. Implement a program to create, open, and close files using file streams.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("file.txt");
+    if (!outFile) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+    outFile << "This is a test file." << endl;
+    outFile.close();
+
+    ifstream inFile("file.txt");
+    if (!inFile) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+    string line;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+    return 0;
+}
+27. Create a program that uses the seekg and tellg functions to manipulate file pointers.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream inFile("file.txt");
+    if (!inFile) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+
+    inFile.seekg(5);
+    cout << "Position after seeking: " << inFile.tellg() << endl;
+
+    char ch;
+    inFile.get(ch);
+    cout << "Character at new position: " << ch << endl;
+
+    inFile.close();
+    return 0;
+}
+28. Write a program that uses the seekp and tellp functions to set and retrieve the put pointer position.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("file.txt", ios::app);
+    if (!outFile) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+
+    outFile.seekp(5);
+    cout << "Position after seeking: " << outFile.tellp() << endl;
+
+    outFile.put('X');
+    outFile.close();
+    return 0;
+}
+29. Write a program to open a file in different modes (read, write, append) and demonstrate their effects.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("file.txt", ios::out);
+    outFile << "Writing to file in output mode." << endl;
+    outFile.close();
+
+    outFile.open("file.txt", ios::app);
+    outFile << "Appending to file." << endl;
+    outFile.close();
+
+    ifstream inFile("file.txt");
+    string line;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+    return 0;
+}
+30. Implement a program that reads from and writes to a file in binary mode.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    int data = 1234;
+    ofstream outFile("file.bin", ios::binary);
+    outFile.write(reinterpret_cast<char*>(&data), sizeof(data));
+    outFile.close();
+
+    int readData;
+    ifstream inFile("file.bin", ios::binary);
+    inFile.read(reinterpret_cast<char*>(&readData), sizeof(readData));
+    inFile.close();
+
+    cout << "Read data: " << readData << endl;
+    return 0;
+}
+31. Create a program that demonstrates the difference between text and binary file modes.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    // Text file mode
+    ofstream outTextFile("textfile.txt");
+    outTextFile << "This is a text file." << endl;
+    outTextFile.close();
+
+    ifstream inTextFile("textfile.txt");
+    string line;
+    while (getline(inTextFile, line)) {
+        cout << "Text file: " << line << endl;
+    }
+    inTextFile.close();
+
+    // Binary file mode
+    int data = 1234;
+    ofstream outBinaryFile("binaryfile.bin", ios::binary);
+    outBinaryFile.write(reinterpret_cast<char*>(&data), sizeof(data));
+    outBinaryFile.close();
+
+    int readData;
+    ifstream inBinaryFile("binaryfile.bin", ios::binary);
+    inBinaryFile.read(reinterpret_cast<char*>(&readData), sizeof(readData));
+    inBinaryFile.close();
+
+    cout << "Binary file read data: " << readData << endl;
+    return 0;
+}
+32. Write a program to open a file in truncation mode and demonstrate its effect.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("file.txt", ios::trunc);
+    outFile << "This file content will be replaced." << endl;
+    outFile.close();
+
+    outFile.open("file.txt", ios::trunc);
+    outFile << "New content after truncation." << endl;
+    outFile.close();
+
+    ifstream inFile("file.txt");
+    string line;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+    return 0;
+}
+33. Write a program to read and write binary data to a file using the read and write functions.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    int data = 1234;
+    ofstream outFile("binarydata.bin", ios::binary);
+    outFile.write(reinterpret_cast<char*>(&data), sizeof(data));
+    outFile.close();
+
+    int readData;
+    ifstream inFile("binarydata.bin", ios::binary);
+    inFile.read(reinterpret_cast<char*>(&readData), sizeof(readData));
+    inFile.close();
+
+    cout << "Read binary data: " << readData << endl;
+    return 0;
+}
+34. Implement a program that uses random access to read and write data at specific positions in a binary file.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    int data1 = 1234, data2 = 5678;
+    ofstream outFile("randomaccess.bin", ios::binary);
+    outFile.write(reinterpret_cast<char*>(&data1), sizeof(data1));
+    outFile.write(reinterpret_cast<char*>(&data2), sizeof(data2));
+    outFile.close();
+
+    int readData1, readData2;
+    ifstream inFile("randomaccess.bin", ios::binary);
+    inFile.seekg(sizeof(data1)); // Move to second data
+    inFile.read(reinterpret_cast<char*>(&readData2), sizeof(readData2));
+    inFile.seekg(0); // Move to first data
+    inFile.read(reinterpret_cast<char*>(&readData1), sizeof(readData1));
+    inFile.close();
+
+    cout << "Read data1: " << readData1 << ", Read data2: " << readData2 << endl;
+    return 0;
+}
+35. Create a program that reads and writes a structure to a binary file using random access.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    Person p1 = {"John Doe", 30};
+    Person p2 = {"Alice Smith", 25};
+
+    ofstream outFile("structure.bin", ios::binary);
+    outFile.write(reinterpret_cast<char*>(&p1), sizeof(p1));
+    outFile.write(reinterpret_cast<char*>(&p2), sizeof(p2));
+    outFile.close();
+
+    Person readP1, readP2;
+    ifstream inFile("structure.bin", ios::binary);
+    inFile.read(reinterpret_cast<char*>(&readP1), sizeof(readP1));
+    inFile.read(reinterpret_cast<char*>(&readP2), sizeof(readP2));
+    inFile.close();
+
+    cout << "Read Person 1: " << readP1.name << ", " << readP1.age << endl;
+    cout << "Read Person 2: " << readP2.name << ", " << readP2.age << endl;
+    return 0;
+}
+36. Write a program that updates specific records in a binary file using random access.
+
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    Person p1 = {"John Doe", 30};
+    Person p2 = {"Alice Smith", 25};
+
+    ofstream outFile("update.bin", ios::binary);
+    outFile.write(reinterpret_cast<char*>(&p1), sizeof(p1));
+    outFile.write(reinterpret_cast<char*>(&p2), sizeof(p2));
+    outFile.close();
+
+    Person updatedPerson = {"Alice Johnson", 27};
+    fstream file("update.bin", ios::in | ios::out | ios::binary);
+    file.seekp(sizeof(p1)); // Move to second record
+    file.write(reinterpret_cast<char*>(&updatedPerson), sizeof(updatedPerson));
+    file.close();
+
+    ifstream inFile("update.bin", ios::binary);
+    Person readPerson;
+    while (inFile.read(reinterpret_cast<char*>(&readPerson), sizeof(readPerson))) {
+        cout << "Name: " << readPerson.name << ", Age: " << readPerson.age << endl;
+    }
+    inFile.close();
+    return 0;
+}
+37. Implement a program that reads and displays the contents of a binary file in reverse order.
+
+
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    vector<Person> people;
+    ifstream inFile("reverse.bin", ios::binary);
+    Person p;
+    while (inFile.read(reinterpret_cast<char*>(&p), sizeof(p))) {
+        people.push_back(p);
+    }
+    inFile.close();
+
+    for (int i = people.size() - 1; i >= 0; --i) {
+        cout << "Name: " << people[i].name << ", Age: " << people[i].age << endl;
+    }
+
+    return 0;
+}
